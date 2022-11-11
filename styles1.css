@@ -1,0 +1,14 @@
+.row{
+    margin: 10px auto;
+    padding: 10px auto;
+    border: 2px ;
+}
+.form-select{
+    margin: auto;
+    padding: auto;
+    Width: 30%;
+}
+
+.btn-dark{
+    opacity: 0.65;
+}
