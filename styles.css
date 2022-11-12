@@ -107,7 +107,7 @@ hr {
   opacity: 0.25;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -10933,5 +10933,8 @@ textarea.form-control-lg {
   }
   .d-print-none {
     display: none !important;
+  }
+  #bienvenida{
+    margin-top: 1000px !important;
   }
 }/*# sourceMappingURL=styles.css.map */
