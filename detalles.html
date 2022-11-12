@@ -6,8 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Producto | tresCDisenos</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles1.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles1.css">
+  <script src="js/myscript.js"></script>
+
 </head>
 
 <body>
@@ -61,32 +63,32 @@
   <div class="container-fluid"></div>
   <div class="row align-items-center">
     <div class="col-md-2 "></div>
-    <div class="ecommerce-gallery col-md-5" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+    <div class="ecommerce-gallery col-md-5 " data-mdb-zoom-effect="true" data-mdb-auto-height="true">
       <div class="row py-3 shadow-5">
         <div class="col-12 mb-1">
           <div class="lightbox">
-            <img src="img1.jpg" alt="Gallery image 1" class="ecommerce-gallery-main-img active w-100" />
+            <img src="img1.jpg" id="imgPrincipal" alt="Gallery image 1" class="ecommerce-gallery-main-img active w-100 rounded " />
           </div>
         </div>
-        <div class="col-3 mt-1">
+        <div class="col-3 mt-1 ">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-            alt="Gallery image 1" class="active w-100" />
+            alt="Gallery image 1" class="active w-100 rounded" id="img0" onclick="cargarImagen(0);"/>
         </div>
         <div class="col-3 mt-1">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-            alt="Gallery image 2" class="w-100" />
+            alt="Gallery image 2" class="w-100 rounded" id="img1" onclick="cargarImagen(1);" />
         </div>
         <div class="col-3 mt-1">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-            alt="Gallery image 3" class="w-100" />
+            alt="Gallery image 3" class="w-100 rounded" id="img2" onclick="cargarImagen(2);"/>
         </div>
         <div class="col-3 mt-1">
           <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
             data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
-            alt="Gallery image 4" class="w-100" />
+            alt="Gallery image 4" class="w-100 rounded" id="img3" onclick="cargarImagen(3);"/>
         </div>
       </div>
     </div>
@@ -119,7 +121,7 @@
 
       <hr size="1px" color="" />
 
-      <div class="panel-body">
+      <div class="panel-body ">
         <h6><b>Color:</b></h6>
         <button type="button" class="btn btn-red btn-circle">
         </button>
@@ -129,10 +131,12 @@
         </button>
         <button type="button" class="btn btn-green btn-circle">
         </button>
+        <button type="button" class="btn btn-pink btn-circle">
+        </button>
       </div>
-      <div><a href="">Cuadro de tallas</a></div>
+      <div class="top-buffer"><a href="">Cuadro de tallas</a></div>
 
-      <div><button type="button" href="bolsa.html" class="btn btn-dark ">Añadir a la bolsa</button></div>
+      <div><button type="button" onclick="iratienda();"  class="btn btn-dark ">Añadir a la bolsa</button></div>
 
     </div>
     <div class="col-md-3 "></div>
