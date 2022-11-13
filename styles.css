@@ -10935,3 +10935,32 @@ textarea.form-control-lg {
     display: none !important;
   }
 }/*# sourceMappingURL=styles.css.map */
+
+
+
+/*personalizaciones del estilo*/
+
+.carrito {
+  min-height: 70vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+.table_producto{
+  display: flex;
+}
+.table_producto > img{
+  width: 9rem;
+  object-fit: contain;
+  margin-right: 20px;
+}
+.table_price > input{
+  width: 40px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 30px;
+  margin-bottom: 20px;
+
+}
