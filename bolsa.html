@@ -59,7 +59,7 @@
       </nav>
       <div class="container my-5 carrito">
         <!---las prendas en una tabla--->
-      <table class="table">
+      <table class="table table-borderless">
         <thead>
           <tr>
             <th scope="col"></th><!--foto-->
@@ -68,43 +68,55 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <div class="flexbox"></div>
-            <td class ="table_producto">
-              <img src="Fotos_productos/hoodie.jpg" class="src" width = '15%' height = '15%'></td>
-            <td class ="table_price"><p class = 'align-text-top'>$80.000</p></td>
-            <td class ="table_cantidad align-top d-flex justify-content-end ">
-              <input type="number" min="1" value="1">
-              <button class="btn btn-sm">
-                <img src="Logos/Equis.png" width="15%">
-              </button> 
-          </tr>
 
           <tr>
-            <div class="flexbox"></div>
             <td class ="table_producto">
-              <img src="Fotos_productos/hoodie.jpg" class="src" width = '15%' height = '15%'></td>
-            <td class ="table_price"><p class = 'align-text-top'>$80.000</p></td>
-            <td class ="table_cantidad align-top d-flex justify-content-end ">
+              <img src="Fotos_productos/hoodie.jpg" class="src" width = '15%' height = '15%'>
+            </td>
+            <div class="flexbox align-top d-flex justify-content-end ">
+            <td class ="table_price">
+              <p class = 'align-text-top'>$80.000</p>
+            </td>
+            <td class ="table_cantidad ">
+              <div class="d-flex justify-content-end">
               <input type="number" min="1" value="1">
               <button class="btn btn-sm">
                 <img src="Logos/Equis.png" width="15%">
               </button> 
-          </tr>
+            </div>
+            </td>
+          </div>
+        </tr>
+
+          <tr>
+            <td class ="table_producto">
+              <img src="Fotos_productos/jard.jpeg" class="src" width = '15%' height = '15%'>
+            </td>
+            <td class ="table_price">
+              <p class = 'align-text-top'>$90.000</p>
+            </td>
+            
+            <td class ="table_cantidad ">
+              <div class="d-flex justify-content-end">
+              <input type="number" min="1" value="1">
+              <button class="btn btn-sm">
+                <img src="Logos/Equis.png" width="15%">
+              </button> 
+            </div>
+            </td>
+          
+          </div>
+        </tr>
+            
         </tbody>
       </table>
     </div>
     <br><br>
-
-    <div class="row mx-5 justify content-end" >
-      <div class="col">
-        <h3 class="itemCartTotal">SUBTOTAL: 0</h3>
-      </div>
-      <div class="col d_flex justify content-end">
-        <button class="btn btn-succes">COMPRAR</button>
-      </div>
+    <div class="d-flex justify-content-around">
+        <h5 class="itemCartTotal">SUBTOTAL: 0</h5>
+        <button class="btn">COMPRAR</button>
     </div>
-      
+
 </body>
 
 
