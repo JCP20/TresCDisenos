@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsa de compras | tresCDisenos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="carritoTotal();">
+    <!--- barra de navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; active-color: white;">
+        <div class="container">
+          <!---- boton desplegable, usado para hacer la barra de navegacion responsive, se activa al
+          estar en celulares o pantallas pequeñas, almacena los links a tienda y galeria-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- aqui se encuentran los items tienda y galeria de la barra de navegacion, al hacer click
+        dirige a tienda.html y galeria.html-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="tienda.html">Tienda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="galeria.html">Galeria</a>
+            </li>
+          </ul>
+          </div>
+          <!-- logo de tresc, al hacer click lleva a index.html -->
+        <a class = "navbar-brand mb-0 px-3" href="index.html">
+            <img src="Logos/Logo_Blanco.png" height="65" width="65" class="d-inline-block align-top">
+        </a>
+        <!--- imagenes de redes sociales, al hacer click lleva a instragram de tresC
+        y al whatsappa de tresc respectivamente-->
+        <div class = "collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/c/573222870841" target = "_blank">
+                        <img src="Logos/Logowp.png"  height="20" width="20" >
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href ="https://www.instagram.com/trescdisenos/" target = "_blank">
+                        <img src="Logos/Logoig.png" height="20" width="20">
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+          <!----logo de la bolsa, al hacer click lleva a bolsa.hmtl-->
+            <a class = "navbar-brand mx-2" href="bolsa.html">
+                <img src="Logos/bolsalogo.png" height="45" width="35" class="d-inline-block align-top" >
+            </a>
+
+    </div>
+      </nav>
+      <div class="container my-5 carrito">
+        
+        <!--para mostrar las prendas se hara uso de una tabla--->
+      <table class="table table-borderless">
+      <!---cabeceras de la tabla-->
+        <thead>
+          <tr>
+            <th scope="col"></th><!--foto-->
+            <th scope="col"></th><!--precio-->
+            <th scope="col"></th><!---cantidad-->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ejemplo de tabulacion de una prenda, cuando se implemente, cada articulo se mostrara de esta forma-->
+          <tr>
+            <div class="producto">
+            <td class ="table_producto">
+              <img src="Fotos_productos/hoodie.jpg" class="src" width = '15%' height = '15%'>
+            </td>
+            <div class="flexbox align-top d-flex justify-content-end ">
+            <td class ="table_price align-middle">
+              <p class = 'align-text-top'>$80000</p>
+            </td>
+            <td class ="table_cantidad align-middle">
+              <div class="d-flex justify-content-end">
+              <input type="number" min="1" value="1">
+              <button class="btn delete btn-sm">
+                <img src="Logos/Equis.png" width="15%">
+              </button> 
+            </div>
+          </div>
+            </td>
+          </div>
+        </tr>
+
+                    
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <!--muestra del subtotal y boton de comprar-->
+    <div class="d-flex justify-content-around">
+        <h5 class="itemCartTotal">SUBTOTAL: 0</h5>
+        <button class="btn">COMPRAR</button>
+    </div>
+
+</body>
+
+
+
+<!--- Seguramente se puede importar js desde los archivos que ya existen pero no supe como:sss-->
+
+<script src="node_modules/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
