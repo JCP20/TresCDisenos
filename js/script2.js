@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.items_options .i_option[category="p_oferta"]').addClass('ct_item-active');  // Se agrega la clase para cambiar el estilo a la categoría que se encuentra seleccionada por defecto
     $('.item').hide();                                 // Se ocultan los artículos 
-    $('.item[category="p_oferta"]').show();            // Se muestran los artículos que corresponden a la categoría por defecto
+    $('.item[offer="si"]').show();                     // Se muestran los artículos que corresponden a la categoría por defecto
     $('.i_option').click(function(){                   // Función que se implementa al oprimir cualquiera de los 3 botones para selección de categoría 
         var categoria = $(this).attr('category');
 
@@ -14,8 +14,13 @@ $(document).ready(function(){
         } setTimeout(ocultarItems,400);                // Se aplica un temporizador para que se note el efecto y después ocultar todos los artículos 
 
         function mostrarItems() {
-            $('.item[category="'+categoria+'"]').show();
-            $('.item[category="'+categoria+'"]').css('transform', 'scale(1)');            
+            if (categoria == "p_oferta"){
+                $('.item[offer="si"').show();
+                $('.item[offer="si"').css('transform', 'scale(1)');
+            } else{
+                $('.item[category="'+categoria+'"]').show();
+                $('.item[category="'+categoria+'"]').css('transform', 'scale(1)');    
+            }
         } setTimeout(mostrarItems,400);                // De igual forma se usa el temporizador para mostrar los artículos filtrados por categoría 
 
     });
