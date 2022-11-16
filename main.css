@@ -108,15 +108,7 @@ input{
   align-items: center;  
 
 }
-.galeria{
-  display: flex;
-  width: 300px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 100%;
-  flex-wrap: wrap;
-}
+
 @media screen and (min-width: 480px){
   .galeria{
     flex: 1 1 50%;
@@ -145,8 +137,47 @@ label{
   border-radius: 40px;
   transition: .5s;
 }
+
+.galeria{
+  display: flex;
+  width: 600px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+}
+.galeria2{
+  display: flex;
+  width: 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0%;
+  flex-wrap: wrap;
+}
+
 .galeria img{
   justify-content: center;
+  aspect-ratio: 3/2.7;
+  border-radius: 10px;
+  max-width: 20%;
+  min-width: 100px;
+  margin: 5px;
+  position:relative;
+  box-shadow: 3px 3px 5px lightgray;
+  justify-content: space-evenly;
+  transition: .5s;
+  object-fit: cover;
+  overflow: hidden;
+  align-self: center
+}
+.galeria2 img{
+  opacity: 0;
+  position: absolute;
+  transform: scale(0);
+  justify-content: center;
+  aspect-ratio: 3/2.7;
   border-radius: 10px;
   max-width: 20%;
   min-width: 100px;
@@ -169,6 +200,15 @@ label:hover{
   box-shadow: 0px 4px 24px rgba(46, 28, 68, 0.993);
   transform: translateY(-7px);
 }
+
+#coleccion2:checked ~ .navegacion .galeria2 {
+  flex: 1 1 100%;
+  width: 600px;
+} 
+#coleccion2:checked ~ .navegacion .galeria {
+  flex: 1 1 0%;
+  width: 0px;
+} 
 
 hr {
   margin: 1rem 0;
@@ -665,7 +705,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
