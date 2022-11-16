@@ -88,6 +88,7 @@
 
 body {
   margin: 0;
+  height: 100%;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
@@ -10934,7 +10935,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-  #bienvenida{
-    margin-top: 1000px !important;
+  #name{
+    margin-top: 100px !important;
   }
 }/*# sourceMappingURL=styles.css.map */
