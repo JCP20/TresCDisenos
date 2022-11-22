@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto | tresCDisenos</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles1.css">
+  <script src="js/myscript.js"></script>
+
+</head>
+
+<body>
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark sticky-top"
+    style="background-color: black; active-color: white;">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="tienda.html">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="galeria.html">Galeria</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="navbar-brand mb-0 px-3" href="index.html">
+        <img src="Logos/Logo_Blanco.png" height="65" width="65" class="d-inline-block align-top">
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://wa.me/c/573222870841" target="_blank">
+              <img src="Logos/Logowp.png" height="20" width="20">
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/trescdisenos/" target="_blank">
+              <img src="Logos/Logoig.png" height="20" width="20">
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <a class="navbar-brand mx-2" href="bolsa.html">
+        <img src="Logos/bolsalogo.png" height="43" width="35" class="d-inline-block align-top">
+      </a>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid"></div>
+  <div class="row align-items-center">
+    <div class="col-md-2 "></div>
+    <div class="ecommerce-gallery col-md-5 " data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+      <div class="row py-3 shadow-5">
+        <div class="col-12 mb-1">
+          <div class="lightbox">
+            <img src="img1.jpg" id="imgPrincipal" alt="Gallery image 1" class="ecommerce-gallery-main-img active w-100 rounded " />
+          </div>
+        </div>
+        <div class="col-3 mt-1 ">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+            alt="Gallery image 1" class="active w-100 rounded" id="img0" onclick="cargarImagen(0);"/>
+        </div>
+        <div class="col-3 mt-1">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+            alt="Gallery image 2" class="w-100 rounded" id="img1" onclick="cargarImagen(1);" />
+        </div>
+        <div class="col-3 mt-1">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+            alt="Gallery image 3" class="w-100 rounded" id="img2" onclick="cargarImagen(2);"/>
+        </div>
+        <div class="col-3 mt-1">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+            alt="Gallery image 4" class="w-100 rounded" id="img3" onclick="cargarImagen(3);"/>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="nombre">
+        <h2>Chaqueta cuero</h3>
+      </div>
+      <div class="" id="ref">Ref:00005</div>
+      <div class="prices">
+        <h4>CO $500</h4>
+      </div>
+      <div class="description">
+        <details>
+          <summary><b>Detalles:</b></summary>
+          Something small enough to escape casual notice.
+        </details>
+      </div>
+      <hr size="1px" color="black" />
+      <div class="">
+        <h6><b>Tallas:</b></h6>
+        <input type="radio" class="btn-check" name="options" id="s" autocomplete="off" checked>
+        <label class="btn btn-secondary" for="s">S</label>
+        <input type="radio" class="btn-check" name="options" id="m" autocomplete="off">
+        <label class="btn btn-secondary" for="m">M</label>
+        <input type="radio" class="btn-check" name="options" id="l" autocomplete="off">
+        <label class="btn btn-secondary" for="l">L</label>
+        <input type="radio" class="btn-check" name="options" id="xl" autocomplete="off">
+        <label class="btn btn-secondary" for="xl">XL</label>
+      </div>
+
+      <hr size="1px" color="" />
+
+      <div class="panel-body ">
+        <h6><b>Color:</b></h6>
+        <button type="button" class="btn btn-red btn-circle">
+        </button>
+        <button type="button" class="btn btn-blue btn-circle">
+        </button>
+        <button type="button" class="btn btn-black btn-circle">
+        </button>
+        <button type="button" class="btn btn-green btn-circle">
+        </button>
+        <button type="button" class="btn btn-pink btn-circle">
+        </button>
+      </div>
+      <div class="top-buffer"><a href="">Cuadro de tallas</a></div>
+
+      <div><button type="button" onclick="iratienda();"  class="btn btn-dark ">Añadir a la bolsa</button></div>
+
+    </div>
+    <div class="col-md-3 "></div>
+  </div>
+  </div>
+
+  <footer></footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
