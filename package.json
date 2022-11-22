@@ -1,3 +1,4 @@
+
 {
   "name": "trescdisenos",
   "version": "1.0.0",
@@ -21,3 +22,28 @@
     "bootstrap": "^5.2.2"
   }
 }
+=======
+{
+  "name": "trescdisenos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCP20/TresCDisenos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JCP20/TresCDisenos/issues"
+  },
+  "homepage": "https://github.com/JCP20/TresCDisenos#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}
+
