@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bolsa de compras | tresCDisenos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -115,3 +116,147 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
+=======
+    <title>Bolsa de Compras | TresCDisenos</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+
+<style>
+  .navbar-dark {
+    background:Black;
+  }
+  #navegacion {
+    display: flex;
+    margin: 10px;
+    height: 600px;
+    align-items: center;
+  }
+
+  #galeriaselector{
+    display: flex;
+    margin: 20px;
+    background-color: white;
+    height: auto;
+    flex-grow: 0.3;
+    flex-direction: column;
+  }
+  #galeria {
+    display: flex;
+    margin: 20px;
+    background-color: white;
+    height: auto;
+    flex-grow: 3;
+    flex-direction: row;
+    align-content: space-between;
+  }
+
+</style>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" id="navbar-main">
+      
+  <div class="container">       
+      
+      <div class= "collapse navbar-collapse" id="menu">
+      
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <div class="container">
+          <a class="nav-link" href="#">Tienda</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Galeria</a>
+        </li>
+      </ul>
+      </div>
+
+      <button class="navbar-toggler collapsed" 
+      type="button" data-bs-toggle="collapse" 
+      data-bs-target="#menu" 
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+        <img src="Logos/Logo_Blanco.png" width="70" height="70" class="mx-auto">
+
+
+    <div class="collapse navbar-collapse" id="">
+    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+
+      <li class="navbar-brand active">
+        <a href="https://www.instagram.com/trescdisenos/" target="_blank">
+          <img src="Logos/Logoig.png" width="18" height="18">
+        </a>
+      </li>
+
+
+      <li class="navbar-brand active">
+         <a href="https://wa.me/c/573222870841" target="_blank">
+         <img src="Logos/Logowp.png" width="18" height="18">
+        </a>
+      </li>
+
+
+      <div class="container">
+      <li class="nav-item active">
+        <a class="navbar-brand" href="bolsa.html">
+            <img src="Logos/bolsalogo.png" width="32" height="40">
+        </a>
+      </li>
+    </ul>
+    </div>
+</div>
+  </nav>
+<div id = "navegacion">
+
+  <div class = "galeriaselector" id = "galeriaselector">
+    
+    <input type = "radio" name = "selector" id = "coleccion1" checked>
+    <input type = "radio" name = "selector" id = "coleccion2" >
+    <input type = "radio" name = "selector" id = "coleccion3" >
+    <input type = "radio" name = "selector" id = "coleccion4" >
+    <label for = "coleccion1">Colección 1</label>
+    <label for = "coleccion2">Colección 2</label>
+    <label for = "coleccion3">Colección 3</label>
+    <label for = "coleccion4">Colección 4</label>
+  </div>
+  <div class = "galeria" id = "galeria">
+      <img src="Logos/1.jpg">
+      <img src="Logos/2.jpg">
+      <img src="Logos/3.jpg">
+      <img src="Logos/4.jpg">
+      <img src="Logos/5.jpg">
+      <img src="Logos/6.jpg">
+      <img src="Logos/7.jpg">
+  </div>
+  <div class = "galeria2" id = "galeria2">
+    <img src="Logos/6.jpg">
+    <img src="Logos/7.jpg">
+    <img src="Logos/8.jpg">
+    <img src="Logos/9.jpg">
+    <img src="Logos/10.jpg">
+</div>
+</div>
+  
+  <hr>
+  
+  <!--
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Tienda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Galeria</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+      </li>
+    </ul>
+---->
+  
+</body>
+</html>
+
