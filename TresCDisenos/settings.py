@@ -77,10 +77,11 @@ WSGI_APPLICATION = 'TresCDisenos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'trescdbase',
-        'USER': 'root',
-        'PASSWORD': 'MySQL2022',
-        'PORT': '3306'
+        'NAME': 'trescbase',
+        'USER': 'admin',
+        'PASSWORD': 'Trescdisenos',
+        'PORT': '3306',
+        'HOST': 'database-1.cv8orbar9nxx.us-east-1.rds.amazonaws.com'
     }
 }
 
