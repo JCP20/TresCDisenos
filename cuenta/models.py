@@ -15,7 +15,7 @@ class Artículo(models.Model):
     material = models.CharField(max_length=50)
     color = models.CharField(max_length=20)
     descripcion = models.TextField()
-    precio = models.IntegerField()
+    precio = models.FloatField()
     fotos = models.ImageField()
     cant_disponible_XS= models.IntegerField()
     cant_disponible_S= models.IntegerField()
