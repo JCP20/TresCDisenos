@@ -1,7 +1,5 @@
 from django.db import models
 from django.conf import settings
-class AlbumFoto(models.Model):
-    fotos = models.ImageField()
 # Create your models here.
 class Coleccion(models.Model):
     nombre = models.CharField(max_length=200)
@@ -16,7 +14,10 @@ class Artículo(models.Model):
     color = models.CharField(max_length=20)
     descripcion = models.TextField()
     precio = models.FloatField()
-    fotos = models.ImageField()
+    foto1 = models.ImageField()
+    foto2 = models.ImageField(blank=True,null=True)
+    foto3 = models.ImageField(blank=True,null=True)
+    foto4 = models.ImageField(blank=True,null=True)
     cant_disponible_XS= models.IntegerField()
     cant_disponible_S= models.IntegerField()
     cant_disponible_M= models.IntegerField()
