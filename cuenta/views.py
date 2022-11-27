@@ -20,7 +20,7 @@ def login(request):
 #si se entra desde post significa que se introdujeron datos para iniciar sesion
 #por lo tanto se pasa a procesarlos
     else:
-        user = authenticate(request, username = request.POST["correo_electronico"], password = request.POST["contraseña"])        
+        user = authenticate(request, username = request.POST["username"], password = request.POST["contraseña"])        
         if user == None:
             return render(request,'Login.html', {
                 'error' : "Correo electronico o contaseña incorrecta"
