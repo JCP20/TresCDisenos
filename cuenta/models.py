@@ -32,7 +32,6 @@ class CarroCompra(models.Model):
     items = models.ManyToManyField(Artículo)
     
 class DireccionEnvio(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     telefono = models.IntegerField()
     direccion = models.CharField(max_length=50)
     barrio = models.CharField(max_length=60)
