@@ -65,7 +65,7 @@
           <div class="col-12 mb-1">
             <div class="card-title align-text-bottom">
               <h1 class="display-5">
-                Hi {{user.username}}
+                Hola {{user.username}} 
               </h1>
               <hr/>
               <section>
@@ -89,7 +89,22 @@
                       <td>
                         <form action="" method="post">
                           {% csrf_token %}
-                          {{ form.as_table }}
+                          <div class="input-contenedor">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" name="telefono" placeholder="Teléfono" required>
+                          </div>
+                          <div class="input-contenedor">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" name="direccion" placeholder="Dirección" required>
+                          </div>
+                          <div class="input-contenedor">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" name="barrio" placeholder="Barrio" required>
+                          </div>
+                          <div class="input-contenedor">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" name="observaciones" placeholder="Observaciones" >
+                          </div>
                           <button type="submit" class="btn btn-primary">Guardar Info</button>
                       </form>
                       </td>

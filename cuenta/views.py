@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
-#from .forms import NuevaDireccion
+from .forms import DirrecionEnvioForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -13,11 +13,11 @@ def galeria(request):
 
 def cuenta(request):
     if request.POST:
-        form_p = NuevaDireccion(request.POST)
+        form_p = DirrecionEnvioForm(request.POST)
         if form_p.is_valid():
             form_p.save(commit=False)
     else:
-        form_p = NuevaDireccion()
+        form_p = DirrecionEnvioForm()
         context = {
         "form": form_p,
         }
