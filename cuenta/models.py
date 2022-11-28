@@ -18,6 +18,7 @@ class Artículo(models.Model):
     foto2 = models.ImageField(blank=True,null=True)
     foto3 = models.ImageField(blank=True,null=True)
     foto4 = models.ImageField(blank=True,null=True)
+    foto5 = models.ImageField(blank=True,null=True)
     cant_disponible_XS= models.IntegerField()
     cant_disponible_S= models.IntegerField()
     cant_disponible_M= models.IntegerField()
@@ -32,7 +33,7 @@ class CarroCompra(models.Model):
     items = models.ManyToManyField(Artículo)
     
 class DireccionEnvio(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,null=True)
     telefono = models.IntegerField()
     direccion = models.CharField(max_length=50)
     barrio = models.CharField(max_length=60)

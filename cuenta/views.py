@@ -15,7 +15,7 @@ def cuenta(request):
     try:
             print(request.POST)
             print("jacobo")
-            dirrecionEnvio = DireccionEnvio(telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
+            dirrecionEnvio = DireccionEnvio(user = request.user, telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
             dirrecionEnvio.save()
             return render(request,'cuenta.html', {'msg': 'Direccion de envio guardado correctamente'})
     except :
