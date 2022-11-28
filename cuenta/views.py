@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
-from .forms import DirrecionEnvioForm
+from .models import DireccionEnvio
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -12,16 +12,17 @@ def galeria(request):
     return render(request,'galeria.html')
 
 def cuenta(request):
-    if request.POST:
-        form_p = DirrecionEnvioForm(request.POST)
-        if form_p.is_valid():
-            form_p.save(commit=False)
+    if request.method == 'GET':
+        return render(request,'cuenta.html',{'msg':""})
     else:
-        form_p = DirrecionEnvioForm()
-        context = {
-        "form": form_p,
-        }
-    return render(request,'cuenta.html',context=context)
+            try:
+                print(request.POST)
+                dirrecionEnvio = DireccionEnvio(telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
+                dirrecionEnvio.save()
+                return render(request,'cuenta.html', {'msg': 'Direccion de envio guardado correctamente'})
+            except :
+                print
+                return render(request,'cuenta.html', {'msg': 'No se pudo guardar'})        
 def infocuenta(request):
     return render(request,'detalles.html')
 def bolsa(request):
