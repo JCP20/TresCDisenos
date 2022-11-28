@@ -12,17 +12,15 @@ def galeria(request):
     return render(request,'galeria.html')
 
 def cuenta(request):
-    if request.method == 'GET':
-        return render(request,'cuenta.html',{'msg':""})
-    else:
-            try:
-                print(request.POST)
-                dirrecionEnvio = DireccionEnvio(telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
-                dirrecionEnvio.save()
-                return render(request,'cuenta.html', {'msg': 'Direccion de envio guardado correctamente'})
-            except :
-                print
-                return render(request,'cuenta.html', {'msg': 'No se pudo guardar'})        
+    try:
+            print(request.POST)
+            print("jacobo")
+            dirrecionEnvio = DireccionEnvio(telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
+            dirrecionEnvio.save()
+            return render(request,'cuenta.html', {'msg': 'Direccion de envio guardado correctamente'})
+    except :
+            print
+            return render(request,'cuenta.html', {'msg': 'No se pudo guardar'})        
 def infocuenta(request):
     return render(request,'detalles.html')
 def bolsa(request):
@@ -41,6 +39,7 @@ def login(request):
                 'error' : "Correo electronico o contaseña incorrecta"
             })
         else:
+            print("juan")
             auth_login(request, user)
             return render(request,'cuenta.html')
 
