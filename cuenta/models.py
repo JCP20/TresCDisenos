@@ -26,9 +26,11 @@ class Artículo(models.Model):
     coleccion= models.ForeignKey(Coleccion, on_delete=models.SET_NULL, null=True)
     def __str__(self) -> str:
         return self.nombre
+
 class CarroCompra(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     items = models.ManyToManyField(Artículo)
+    
 class DireccionEnvio(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     telefono = models.IntegerField()

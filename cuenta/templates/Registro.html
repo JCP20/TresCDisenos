@@ -10,32 +10,40 @@
 
 </head>  
 <body>
- <form class="formulario">
     
-    <h1>Registrate</h1>
-     <div class="contenedor">
-     
-     <div class="input-contenedor">
-         <i class="fas fa-user icon"></i>
-         <input type="text" placeholder="Nombre Completo">
-         
-         </div>
-         
-         <div class="input-contenedor">
-         <i class="fas fa-envelope icon"></i>
-         <input type="text" placeholder="Correo Electronico">
-         
-         </div>
-         
-         <div class="input-contenedor">
-        <i class="fas fa-key icon"></i>
-         <input type="password" placeholder="Contraseña">
-         
-         </div>
-         <input type="submit" value="Registrate" class="button">
-         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-         <p>¿Ya tienes una cuenta?<a class="link" href="login">Iniciar Sesion</a></p>
-     </div>
+    <form class="formulario" method="POST">
+        {% csrf_token %}
+
+        {% if msg != "" %}
+            <p style="text-align: center; width:auto; color:rgb(16, 16, 133);">{{msg}}</p>
+        {% endif %}
+        
+        <h1>Registrate</h1>
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" name="nombre" placeholder="Nombres" required>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" name="apellido" placeholder="Apellidos" required>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" name = "correo" placeholder="Correo Electronico" required style="border:none; font-size: 20px; width: 82%; padding: 10px;">
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" name="contraseña1" placeholder="Contraseña" minlength="8" required>
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" name="contraseña2" placeholder="Confirmar Contraseña" minlength="8" required>
+            </div>
+            <input type="submit" value="Registrate" class="button">
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>¿Ya tienes una cuenta?<a class="link" href="login">Iniciar Sesion</a></p>
+        </div>
     </form>
 </body>
 </html>
