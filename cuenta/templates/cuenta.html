@@ -87,7 +87,11 @@
                         <p>{{user.email}}</p>
                       </td>
                       <td>
-                        <p>No hay dirección registrada</p>
+                        <form action="" method="post">
+                          {% csrf_token %}
+                          {{ form.as_table }}
+                          <button type="submit" class="btn btn-primary">Guardar Info</button>
+                      </form>
                       </td>
                       <td>
                         <p>No hay método de pago registrado</p>

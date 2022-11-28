@@ -3,12 +3,22 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
+from .forms import NuevaDireccion
 # Create your views here.
 def galeria(request):
     return render(request,'galeria.html')
+
 def cuenta(request):
-    cuentaP = User.get_username
-    return render(request,'cuenta.html')   
+    if request.POST:
+        form_p = NuevaDireccion(request.POST)
+        if form_p.is_valid():
+            form_p.save(commit=False)
+    else:
+        form_p = NuevaDireccion()
+        context = {
+        "form": form_p,
+        }
+    return render(request,'cuenta.html',context=context)   
 def infocuenta(request):
     return render(request,'detalles.html')
 def bolsa(request):
