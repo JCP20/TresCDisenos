@@ -7,13 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Cuenta | tresCDisenos</title>
-  <link rel="stylesheet" href="static/stylesc.css">
+  <link rel="stylesheet" href="static/css/styles.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -36,19 +32,19 @@
       </div>
 
       <a class="navbar-brand mb-0 px-3" href="index">
-        <img src="Logos/Logo_Blanco.png" height="65" width="65" class="d-inline-block align-top">
+        <img src="static/Logos/Logo_Blanco.png" height="65" width="65" class="d-inline-block align-top">
       </a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="https://wa.me/c/573222870841" target="_blank">
-              <img src="Logos/Logowp.png" height="20" width="20">
+              <img src="static/Logos/Logowp.png" height="20" width="20">
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="https://www.instagram.com/trescdisenos/" target="_blank">
-              <img src="Logos/Logoig.png" height="20" width="20">
+              <img src="static/Logos/Logoig.png" height="20" width="20">
             </a>
           </li>
         </ul>
@@ -56,12 +52,12 @@
       </div>
 
       <a class="navbar-brand mx-2" href="registro">
-        <img src="Logos/bolsalogo.png" height="43" width="35" class="d-inline-block align-top">
+        <img src="static/Logos/bolsalogo.png" height="43" width="35" class="d-inline-block align-top">
       </a>
 
     </div>
   </nav>
-  <div class="container-fluid form-control card">
+  <div class="container-fluid form-control card mt-5">
     <div class="row form-floating">
       <div class="col-md-1"></div>
       <div class="col-md-10 gy-5">
@@ -69,18 +65,11 @@
           <div class="col-12 mb-1">
             <div class="card-title align-text-bottom">
               <h1 class="display-5">
-                Hola Juliana
+                Hi {{user.username}}
               </h1>
               <hr/>
               <section>
                 <table class="table table-borderless">
-                  <thead>
-                    <tr>
-                      <td class="justify-content-center">
-                        Información del perfil
-                      </td>
-                    </tr>
-                  </thead>
                   <tbody>
                     <tr>
                       <td class="fw-bold">
@@ -95,12 +84,10 @@
                     </tr>
                     <tr>
                       <td>
-                        <p>Juliana Cardozo Pedraza</p>
-                        <p>ejemplo@gmail.com</p>
-                        <p>300 123 1234</p>
+                        <p>{{user.email}}</p>
                       </td>
                       <td>
-                        <p>No hay dirreción registrada</p>
+                        <p>No hay dirección registrada</p>
                       </td>
                       <td>
                         <p>No hay método de pago registrado</p>
@@ -108,7 +95,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="url"  style="float: right; color: black;">Editar Información</a>
+                <a href="url"  style="float: right; color: black;">Realizar Compra</a>
               </section>
             </div>
           </div>

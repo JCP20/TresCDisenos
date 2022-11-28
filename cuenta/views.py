@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 def galeria(request):
     return render(request,'galeria.html')
 def cuenta(request):
-    return render(request,'cuenta.html')
+    cuentaP = User.get_username
+    return render(request,'cuenta.html')   
 def infocuenta(request):
     return render(request,'detalles.html')
 def bolsa(request):
@@ -27,7 +28,7 @@ def login(request):
             })
         else:
             auth_login(request, user)
-            return render(request,'bolsa.html')
+            return render(request,'cuenta.html')
 
 def registro(request):
     return render(request,'Registro.html')
