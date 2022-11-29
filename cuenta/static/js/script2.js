@@ -13,9 +13,8 @@ function cargarValores(){
     let nom = document.getElementById("nombre");
     nom.innerHTML = "<h2>" + nombre + "</h2>"; 
     const foto1 = urlParams.get('foto1');
-    let foto0 = document.getElementById("img0");
-    foto0.innerHTML = "<src:"+ foto0 + ">"; 
-    foto0.innerHTML = "<data-mdb-img:"+ foto0 + ">"; 
+    let foto0 = document.getElementById("imgPrincipal");
+    foto0.src= foto1;
 
     
 }
