@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
 #from .forms import NuevaDireccion
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Artículo
 
 # Create your views here.
 def galeria(request):
@@ -26,6 +26,7 @@ def infocuenta(request):
     return render(request,'detalles.html')
 def bolsa(request):
     return render(request,'bolsa.html')
+
 def login(request):
 #condicional usado para verificar de que forma se accede a la pagina
 #si se entra desde el metodo get no hara nada, solo se accede a la pagina
@@ -37,29 +38,32 @@ def login(request):
         user = authenticate(request, username = request.POST["username"], password = request.POST["contraseña"])        
         if user == None:
             return render(request,'Login.html', {
-                'error' : "Correo electronico o contaseña incorrecta"
+                'error' : "Nombre de usuario o contaseña incorrecta"
             })
         else:
             auth_login(request, user)
             return render(request,'cuenta.html')
 
 def registro(request):
+    # Si se ingresa desde el método GET sólo se accede a la página
     if request.method == 'GET':
         return render(request,'Registro.html',{'msg':""})
     else:
+        # Si se ingresa desde el método POST se verifica que coincidan las contraseñas
         if request.POST.get('contraseña1') == request.POST.get('contraseña2'):
             try:
                 print(request.POST)
-                user = User.objects.create_user(username = request.POST["nombre"], password = request.POST["contraseña1"], email = request.POST["correo"], first_name = request.POST['nombre'], last_name = request.POST['apellido'])
+                user = User.objects.create_user(username = request.POST["username"], password = request.POST["contraseña1"], email = request.POST["correo"], first_name = request.POST['nombre'].title(), last_name = request.POST['apellido'].title())
                 user.save()
-                return render(request,'Registro.html', {'msg': 'Registrado Correctamente'})
+                return render(request,'Registro.html', {'msg': 'Registrado correctamente, puedes iniciar sesión.'})
 
             except :
                 print
-                return render(request,'Registro.html', {'msg': 'No se pudo registrar'})        
+                return render(request,'Registro.html', {'msg': 'El nombre de usuario ya está en uso'})        
        
         else:
             return render(request,'Registro.html', {'msg': 'Las contraseñas no coinciden'})        
 
 def tienda(request):
-    return render(request,'tienda.html')
+    lista_art = Artículo.objects.all()
+    return render(request,'tienda.html', {'articulos':lista_art})

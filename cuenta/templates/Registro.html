@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title></title> 
-	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-	<link rel="stylesheet" href="static/estilos.css">
-	
 
-</head>  
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="static/estilos.css">
+</head>
+
 <body>
-    
+
     <form class="formulario" method="POST">
         {% csrf_token %}
 
         {% if msg != "" %}
-            <p style="text-align: center; width:auto; color:rgb(16, 16, 133);">{{msg}}</p>
+        <p style="text-align: center; width:auto; color:rgb(16, 16, 133);">{{msg}}</p>
         {% endif %}
-        
+
         <h1>Registrate</h1>
         <div class="contenedor">
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" name="username" placeholder="Nombre de Usuario" required>
+            </div>
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
                 <input type="text" name="nombre" placeholder="Nombres" required>
@@ -30,7 +35,8 @@
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <input type="email" name = "correo" placeholder="Correo Electronico" required style="border:none; font-size: 20px; width: 82%; padding: 10px;">
+                <input type="email" name="correo" placeholder="Correo Electronico" required
+                    style="border:none; font-size: 20px; width: 82%; padding: 10px;">
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
@@ -46,4 +52,5 @@
         </div>
     </form>
 </body>
+
 </html>
