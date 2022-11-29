@@ -10,12 +10,9 @@
   <link rel="stylesheet" href="static/css/styles1.css">
   <script src="static/js/myscript.js"></script>
   <script src="static/js/jquery-3.6.1.js"></script>
-
-
+  <script src="static/js/script2.js"></script>
 </head>
-
-<body>
-
+<body  onload="cargarValores();"  >
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark sticky-top"
     style="background-color: black; active-color: white;">
     <div class="container">
@@ -78,13 +75,13 @@
           </div>
         </div>
         <div class="col-3 mt-1 ">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+          <img src=""
+            data-mdb-img=""
             alt="Gallery image 1" class="active w-100 rounded" id="img0" onclick="cargarImagen(0);"/>
         </div>
         <div class="col-3 mt-1">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+          <img src=""
+            data-mdb-img=""
             alt="Gallery image 2" class="w-100 rounded" id="img1" onclick="cargarImagen(1);" />
         </div>
         <div class="col-3 mt-1">
@@ -100,13 +97,12 @@
       </div>
     </div>
     <div class="col-md-3 text-center">
-      <div class="nombre">
-        <h2>Chaqueta cuero</h3>
+      <div class="nombre" id="nombre">
       </div>
-      <div class="" id="ref">Ref:00005</div>
-      <div class="prices">
-        <h4>CO $500</h4>
+
+      <div class="prices" id="valPrecio1">
       </div>
+
       <div class="description">
         <details>
           <summary><b>Detalles:</b></summary>
@@ -127,9 +123,7 @@
       </div>
 
       <hr size="1px" color="" />
-
-
-              
+         
       <div class="top-buffer"><a href="static/images/imgtallas.jfif">Cuadro de tallas</a></div>
 
       <div><a type="submit" href="registro" class="btn btn-dark " >Añadir a la bolsa</a></div>
