@@ -15,7 +15,3 @@ function cargarImagen(ind){
     imgsel.height = heights;
 
 }
-
-function iratienda(){
- location.href="bolsa.html";
-}
