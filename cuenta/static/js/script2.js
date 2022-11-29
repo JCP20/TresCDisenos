@@ -1,5 +1,6 @@
 function detalles(nombre, price,foto1){
-    window.location.href = "detalles?nombre=" + nombre + "&precio="+ price + "&foto1="+foto1 ;
+
+    window.location.href = "infoproducto?nombre=" + nombre + "&precio="+ price + "&foto1="+foto1 ;
 }
 
 function cargarValores(){
