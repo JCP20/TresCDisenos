@@ -66,4 +66,7 @@ def registro(request):
             return render(request,'Registro.html', {'msg': 'Las contraseñas no coinciden'})        
 
 def tienda(request):
-    return render(request,'tienda.html')
+    context ={
+       'items' : Artículo.objects.all()
+    }
+    return render(request,"tienda.html",context)

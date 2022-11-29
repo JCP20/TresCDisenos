@@ -72,7 +72,7 @@
     </div>
     <!--- Lista de artículos -->
     <section class="items_list">
-      {% for art in articulos %}
+      {% for art in items %}
         {% if art.oferta == True %}
           {% if art.tipo_articulo == 'Prendas superiores' %}
             <div class="item" category="p_superiores" offer="si">
