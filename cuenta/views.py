@@ -21,7 +21,7 @@ def cuenta(request):
     except :
             print
             return render(request,'cuenta.html', {'msg': 'No se pudo guardar'})        
-def infocuenta(request):
+def infoproducto(request):
     return render(request,'detalles.html')
 def bolsa(request):
     return render(request,'bolsa.html')
@@ -36,13 +36,16 @@ def login(request):
         user = authenticate(request, username = request.POST["username"], password = request.POST["contraseña"])        
         if user == None:
             return render(request,'Login.html', {
-                'error' : "Correo electronico o contaseña incorrecta"
+                'error' : "usuario o contaseña incorrecta"
             })
         else:
             print("juan")
             auth_login(request, user)
-            return render(request,'cuenta.html')
-
+            return redirect("cuenta")
+        
+        
+        
+        
 def registro(request):
     if request.method == 'GET':
         return render(request,'Registro.html',{'msg':""})
@@ -63,3 +66,6 @@ def registro(request):
 
 def tienda(request):
     return render(request,'tienda.html')
+
+def cuenta(request):
+    return render(request, 'cuenta.html')
