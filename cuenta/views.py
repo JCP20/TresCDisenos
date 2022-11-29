@@ -11,16 +11,18 @@ from .models import Artículo
 def galeria(request):
     return render(request,'galeria.html')
 
-def cuenta(request):
+def panel_usuario(request):
     try:
             print(request.POST)
             print("jacobo")
             dirrecionEnvio = DireccionEnvio(user = request.user, telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
             dirrecionEnvio.save()
-            return render(request,'cuenta.html', {'msg': 'Direccion de envio guardado correctamente'})
+            return render(request,'panel_usuario.html', {'msg': 'Direccion de envio guardado correctamente'})
     except :
             print
-            return render(request,'cuenta.html', {'msg': 'No se pudo guardar'})        
+            return render(request,'panel_usuario.html', {'msg': 'No se pudo guardar'})        
+
+
 def infoproducto(request):
     return render(request,'detalles.html')
 def bolsa(request):
@@ -40,13 +42,9 @@ def login(request):
                 'error' : "Correo electronico o contaseña incorrecta"
             })
         else:
-            print("juan")
             auth_login(request, user)
-            return redirect("cuenta")
-        
-        
-        
-        
+            return redirect("panel_usuario")
+            
 def registro(request):
     # Si se ingresa desde el método GET sólo se accede a la página
     if request.method == 'GET':
