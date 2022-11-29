@@ -87,10 +87,33 @@
                         <p>{{user.email}}</p>
                       </td>
                       <td>
-                        <form action="" method="post">
+                        <form action="" method="POST" id="info">
                           {% csrf_token %}
-                          {{ form.as_table }}
-                          <button type="submit" class="btn btn-primary">Guardar Info</button>
+                          {% if msg != "" %}
+                          <p style="text-align: center; width:auto; color:rgb(16, 16, 133);">{{msg}}</p>
+                          {% endif %}
+                          <div class="input-contenedor">
+                             <i class="fas fa-user icon"></i>
+                             <input type="number" name="telefono" placeholder="Teléfono" required>
+                          </div>
+                          <br/>
+                          <div class="input-contenedor">
+                             <i class="fas fa-user icon"></i>
+                             <input type="text" name="direccion" placeholder="Dirección" required>
+                          </div>
+                          <br/>
+                          <div class="input-contenedor">
+                             <i class="fas fa-user icon"></i>
+                             <input type="text" name="barrio" placeholder="Barrio" required>
+                          </div>
+                          <br/>
+                          <div class="input-contenedor">
+                              <i class="fas fa-user icon"></i>
+                              <textarea form="info" name="observaciones" placeholder="Observaciones" rows="4" cols="40">
+                              </textarea>
+                          </div>
+                          <br/>
+                          <button type="submit" class="btn btn-primary btn-dark">Guardar Info</button>
                       </form>
                       </td>
                       <td>

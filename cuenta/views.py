@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
-#from .forms import NuevaDireccion
-from django.contrib.auth.models import User
+from .models import DireccionEnvio
+from django.contrib.auth.forms import UserCreationForm
 from .models import Artículo
 
 # Create your views here.
@@ -12,17 +12,16 @@ def galeria(request):
     return render(request,'galeria.html')
 
 def cuenta(request):
-    if request.POST:
-        form_p = NuevaDireccion(request.POST)
-        if form_p.is_valid():
-            form_p.save(commit=False)
-    else:
-        form_p = NuevaDireccion()
-        context = {
-        "form": form_p,
-        }
-    return render(request,'cuenta.html',context=context)
-def infocuenta(request):
+    try:
+            print(request.POST)
+            print("jacobo")
+            dirrecionEnvio = DireccionEnvio(user = request.user, telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
+            dirrecionEnvio.save()
+            return render(request,'cuenta.html', {'msg': 'Direccion de envio guardado correctamente'})
+    except :
+            print
+            return render(request,'cuenta.html', {'msg': 'No se pudo guardar'})        
+def infoproducto(request):
     return render(request,'detalles.html')
 def bolsa(request):
     return render(request,'bolsa.html')
@@ -38,12 +37,16 @@ def login(request):
         user = authenticate(request, username = request.POST["username"], password = request.POST["contraseña"])        
         if user == None:
             return render(request,'Login.html', {
-                'error' : "Nombre de usuario o contaseña incorrecta"
+                'error' : "Correo electronico o contaseña incorrecta"
             })
         else:
+            print("juan")
             auth_login(request, user)
-            return render(request,'cuenta.html')
-
+            return redirect("cuenta")
+        
+        
+        
+        
 def registro(request):
     # Si se ingresa desde el método GET sólo se accede a la página
     if request.method == 'GET':
@@ -65,5 +68,4 @@ def registro(request):
             return render(request,'Registro.html', {'msg': 'Las contraseñas no coinciden'})        
 
 def tienda(request):
-    lista_art = Artículo.objects.all()
-    return render(request,'tienda.html', {'articulos':lista_art})
+    return render(request,'tienda.html')

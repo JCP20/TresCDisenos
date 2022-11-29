@@ -15,13 +15,13 @@ class Artículo(models.Model):
     tipo_articulo = models.CharField(default = p_sup, max_length=200, choices=[(p_sup,'Prendas superiores'),(p_inf,'Prendas inferiores')])
     oferta = models.BooleanField(default=False)
     material = models.CharField(max_length=50)
-    color = models.CharField(max_length=20)
     descripcion = models.TextField()
     precio = models.FloatField()
     foto1 = models.ImageField(upload_to="imagenes")
     foto2 = models.ImageField(blank=True,null=True,upload_to="imagenes")
     foto3 = models.ImageField(blank=True,null=True,upload_to="imagenes")
     foto4 = models.ImageField(blank=True,null=True,upload_to="imagenes")
+    foto5 = models.ImageField(blank=True,null=True,upload_to="imagenes")
     cant_disponible_XS= models.IntegerField()
     cant_disponible_S= models.IntegerField()
     cant_disponible_M= models.IntegerField()
@@ -36,8 +36,9 @@ class CarroCompra(models.Model):
     items = models.ManyToManyField(Artículo)
     
 class DireccionEnvio(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,null=True)
     telefono = models.IntegerField()
     direccion = models.CharField(max_length=50)
     barrio = models.CharField(max_length=60)
     observaciones = models.TextField()
+    
