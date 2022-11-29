@@ -26,8 +26,3 @@ $(document).ready(function(){
     });
 })
 
-function detalles(item){
-    
-    window.location.href = "detalles";
-    alert(item);
-}

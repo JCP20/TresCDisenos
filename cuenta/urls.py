@@ -10,5 +10,5 @@ urlpatterns = [
     path('login', views.login),
     path('registro', views.registro),
     path('bolsa', views.bolsa),
-    path('detalles', views.infoproducto)
+    path('infoproducto', views.infoproducto,name= "infoproducto")
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

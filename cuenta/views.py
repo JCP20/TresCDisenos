@@ -24,7 +24,7 @@ def panel_usuario(request):
 
 
 def infoproducto(request):
-    return render(request,'detalles.html')
+    return render(request,'infoproducto.html')
 def bolsa(request):
     return render(request,'bolsa.html')
 
