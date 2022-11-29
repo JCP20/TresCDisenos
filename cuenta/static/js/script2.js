@@ -1,3 +1,24 @@
+function detalles(nombre, price,foto1){
+    window.location.href = "detalles?nombre=" + nombre + "&precio="+ price + "&foto1="+foto1 ;
+}
+
+function cargarValores(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const precio = urlParams.get('precio');
+    let pre = document.getElementById("valPrecio1");
+    pre.innerHTML = "<h4>Precio: " + precio + "</h4>";     
+    const nombre = urlParams.get('nombre');
+    let nom = document.getElementById("nombre");
+    nom.innerHTML = "<h2>" + nombre + "</h2>"; 
+    const foto1 = urlParams.get('foto1');
+    let foto0 = document.getElementById("img0");
+    foto0.innerHTML = "<src:"+ foto0 + ">"; 
+    foto0.innerHTML = "<data-mdb-img:"+ foto0 + ">"; 
+
+    
+}
+
 $(document).ready(function(){
     $('.items_options .i_option[category="p_oferta"]').addClass('ct_item-active');  // Se agrega la clase para cambiar el estilo a la categoría que se encuentra seleccionada por defecto
     $('.item').hide();                                 // Se ocultan los artículos 
