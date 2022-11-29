@@ -70,3 +70,9 @@ def tienda(request):
        'items' : Artículo.objects.all()
     }
     return render(request,"tienda.html",context)
+
+def bolsa(request):
+    context ={
+       'items' : Artículo.objects.all()
+    }
+    return render(request,"bolsa.html",context)

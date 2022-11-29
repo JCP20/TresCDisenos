@@ -74,8 +74,9 @@
     <section class="items_list">
       {% for art in items %}
         {% if art.oferta == True %}
-          {% if art.tipo_articulo == 'Prendas superiores' %}
-            <div class="item" category="p_superiores" offer="si">
+        {% if art.tipo_articulo == 'Prendas superiores' %}
+            
+          <div class="item" category="p_superiores" offer="si">
           {% else %}
             <div class="item" category="p_inferiores" offer="si">
           {% endif %}
@@ -86,7 +87,7 @@
             <div class="item" category="p_inferiores" offer="no">
           {% endif %}
         {% endif %}
-          <img src="{{ art.foto1.url }}" alt="">
+          <img src="{{ art.foto1.url }}" onclick="detalles()" alt="">
           <a href="#">{{art.nombre}}</a>
           <h5>{{art.precio}}</h5>
         </div>
