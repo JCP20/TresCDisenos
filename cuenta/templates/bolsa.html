@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/styles.css"/>
+    <script src="static/js/script2.js"></script>
 
     <title>Bolsa de compras | tresCDisenos</title>
 
 </head>
-<body>
+<body onload="cargarValorescarrito();">
     <!--- barra de navegacion-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; active-color: white;">
         <div class="container">
@@ -60,35 +61,44 @@
             </a>
 
     </div>
+
       </nav>
-      <div class="container my-5 carrito">
+      <form class="formulario" method="POST">
+        {% csrf_token %}
+    
+        {% if msg != "" %}
+            <p style="text-align: center; width:auto; color:rgb(16, 16, 133);">{{msg}}</p>
+        {% endif %}
+      <div class="container">
         
         <!--para mostrar las prendas se hara uso de una tabla--->
       <table class="table table-borderless">
       <!---cabeceras de la tabla-->
-        <thead>
+      <table class="table table-dark">
+        <thead >
           <tr>
-            <th scope="col"></th><!--foto-->
-            <th scope="col"></th><!--precio-->
-            <th scope="col"></th><!---cantidad-->
+            <th scope="col" >Productos</th><!--foto-->
+            <th scope="col" ></th><!--precio-->
+            <th scope="col" id="cantidad"></th><!---cantidad-->
           </tr>
         </thead>
         <tbody>
           <!-- ejemplo de tabulacion de una prenda, cuando se implemente, cada articulo se mostrara de esta forma-->
           <tr>
             <div class="producto">
-            <td class ="table_producto">
-              <img src="Fotos_productos/hoodie.jpg" class="src" width = '15%' height = '15%'>
+            <td class ="table_producto " align="center">
+              <img id="imgPrincipal" width="16%" >
             </td>
-            <div class="flexbox align-top d-flex justify-content-end ">
-            <td class ="table_price align-middle">
-              <p class = 'align-text-top'>$80000</p>
+            <div class="flexbox   ">
+            <td class ="table_price align-middle" > 
+              <p class="nombre" id="nombre"></p>
+              <p class = 'align-text-top' id="valPrecio1"></p>
             </td>
             <td class ="table_cantidad align-middle">
               <div class="d-flex justify-content-end">
               <input type="number" min="1" value="1">
               <button class="btn delete btn-sm">
-                <img src="Logos/Equis.png" width="15%">
+                <img src="static/Logos/Equis.png" width="15%">
               </button> 
             </div>
           </div>
@@ -100,11 +110,12 @@
         </tbody>
       </table>
     </div>
+  </form>
     <br><br>
     <!--muestra del subtotal y boton de comprar-->
     <div class="d-flex justify-content-around">
         <h5 class="itemCartTotal">SUBTOTAL: 0</h5>
-        <button class="btn">COMPRAR</button>
+        <button class="btn">IR A PAGAR</button>
     </div>
 
 </body>

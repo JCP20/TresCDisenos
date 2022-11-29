@@ -1,22 +1,46 @@
 function detalles(nombre, price,foto1){
-
     window.location.href = "infoproducto?nombre=" + nombre + "&precio="+ price + "&foto1="+foto1 ;
 }
 
-function cargarValores(){
+function carrito(){
+    window.location.href = "bolsa?nombre=" + nombre + "&precio="+ precio + "&foto1="+foto1 ;
+
+}
+
+function cargarValorescarrito(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const precio = urlParams.get('precio');
+    precio = urlParams.get('precio');
     let pre = document.getElementById("valPrecio1");
     pre.innerHTML = "<h4>Precio: " + precio + "</h4>";     
-    const nombre = urlParams.get('nombre');
+    nombre = urlParams.get('nombre');
     let nom = document.getElementById("nombre");
     nom.innerHTML = "<h2>" + nombre + "</h2>"; 
-    const foto1 = urlParams.get('foto1');
+    foto1 = urlParams.get('foto1');
     let foto0 = document.getElementById("imgPrincipal");
     foto0.src= foto1;
+}
 
-    
+function cargarValoresprod(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    precio = urlParams.get('precio');
+    pre = document.getElementById("valPrecio1");
+    pre.innerHTML = "<h4>Precio: " + precio + "</h4>";     
+    nombre = urlParams.get('nombre');
+    var nom = document.getElementById("nombre");
+    nom.innerHTML = "<h2>" + nombre + "</h2>"; 
+    foto1 = urlParams.get('foto1');
+    let foto0 = document.getElementById("imgPrincipal");
+    foto0.src= foto1;
+    let img0 = document.getElementById("img0");
+    img0.src= foto1;
+    let img1 = document.getElementById("img1");
+    img1.src= foto1;
+    let img2 = document.getElementById("img2");
+    img2.src= foto1;
+    let img3 = document.getElementById("img3");
+    img3.src= foto1;
 }
 
 $(document).ready(function(){

@@ -14,12 +14,12 @@ def galeria(request):
 def panel_usuario(request):
     try:
             print(request.POST)
-            print("jacobo")
+ 
             dirrecionEnvio = DireccionEnvio(user = request.user, telefono = request.POST["telefono"], direccion = request.POST["direccion"], barrio = request.POST['barrio'], observaciones = request.POST['observaciones'])
             dirrecionEnvio.save()
             return render(request,'panel_usuario.html', {'msg': 'Direccion de envio guardado correctamente'})
     except :
-            print
+
             return render(request,'panel_usuario.html', {'msg': 'No se pudo guardar'})        
 
 
