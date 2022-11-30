@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from .models import DireccionEnvio
 from django.contrib.auth.forms import UserCreationForm
 from .models import Artículo
+
+from .forms import ArticuloForm
 
 # Create your views here.
 def galeria(request):
@@ -24,9 +26,25 @@ def panel_usuario(request):
 
 
 def infoproducto(request):
-    return render(request,'infoproducto.html')
-def bolsa(request):
-    return render(request,'bolsa.html')
+    if request.method == 'GET':
+        if request.GET.get('anadir_c') == 'true':
+            try:
+                art = get_object_or_404(Artículo, nombre = request.GET.get('nombre'))
+                if art.restar_cant():
+                    dicc = {'foto1':art.foto1, 'foto2':art.foto2, 'foto3':art.foto3, 'foto4':art.foto4, 'foto5':art.foto5, 'nombre':art.nombre, 'precio':art.precio, 'descripcion':art.descripcion, 'cant_disponible_XS':art.cant_disponible_XS}
+                    form = ArticuloForm(dicc, instance=art)
+            
+                    form.save()
+                    return render(request,'infoproducto.html',{'msg':"AGREGADO A LA BOLSA"})
+                else:
+                    return render(request,'infoproducto.html',{'msg':"NO HAY ELEMENTOS DISPONIBLES"})
+            except:
+                return render(request,'infoproducto.html',{'msg':"ERROR (falta manejar excepciones)"})
+
+        return render(request,'infoproducto.html')
+
+# def bolsa(request):
+#     return render(request,'bolsa.html')
 
 def login(request):
 #condicional usado para verificar de que forma se accede a la pagina
@@ -59,7 +77,6 @@ def registro(request):
                 return render(request,'Registro.html', {'msg': 'Registrado correctamente, puedes iniciar sesión.'})
 
             except :
-                print
                 return render(request,'Registro.html', {'msg': 'El nombre de usuario ya está en uso'})        
        
         else:

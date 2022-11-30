@@ -1,5 +1,6 @@
 function detalles(nombre, price,foto1){
-    window.location.href = "infoproducto?nombre=" + nombre + "&precio="+ price + "&foto1="+foto1 ;
+    url = "infoproducto?nombre=" + nombre + "&precio="+ price + "&foto1="+foto1 + "&anadir_c="+ 'false';
+    window.location.href = url ;
 }
 
 function carrito(){
@@ -43,10 +44,26 @@ function cargarValoresprod(){
     img3.src= foto1;
 }
 
+function añadir(){
+    console.log("Entrnado a añadir")
+    var nom = document.getElementById("nombre").textContent;
+    var pre = document.getElementById("valPrecio1").textContent.substring(8);
+    var foto0 = document.getElementById("imgPrincipal").src;
+    console.log(nom,pre,foto0)
+
+    url = "infoproducto?nombre=" + nom + "&precio="+ pre + "&foto1="+foto0 + "&anadir_c="+ 'true'
+    window.location.href = url
+
+    // let btn = document.getElementById('btn_añadir')
+    // btn.href = url.substring(0,n-5) + 'true';
+//    window.location.href = url.substring(0,n-5) + 'true' ;
+
+}
+
 $(document).ready(function(){
-    $('.items_options .i_option[category="p_oferta"]').addClass('ct_item-active');  // Se agrega la clase para cambiar el estilo a la categoría que se encuentra seleccionada por defecto
-    $('.item').hide();                                 // Se ocultan los artículos 
-    $('.item[offer="si"]').show();                     // Se muestran los artículos que corresponden a la categoría por defecto
+    // $('.items_options .i_option[category="p_oferta"]').addClass('ct_item-active');  // Se agrega la clase para cambiar el estilo a la categoría que se encuentra seleccionada por defecto
+    // $('.item').hide();                                 // Se ocultan los artículos 
+    // $('.item[offer="si"]').show();                     // Se muestran los artículos que corresponden a la categoría por defecto
     $('.i_option').click(function(){                   // Función que se implementa al oprimir cualquiera de los 3 botones para selección de categoría 
         var categoria = $(this).attr('category');
         $('.i_option').removeClass('ct_item-active');  // Se remueve la clase que cambia el estilo a todos los botones 

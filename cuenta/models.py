@@ -31,6 +31,12 @@ class Artículo(models.Model):
     def __str__(self) -> str:
         return self.nombre
 
+    def restar_cant(self):
+        if self.cant_disponible_XS > 0:
+            self.cant_disponible_XS -= 1
+            return True
+        return False
+
 class CarroCompra(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE)
     items = models.ManyToManyField(Artículo)
